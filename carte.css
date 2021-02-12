@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body{
+    background: #eee;
+    font-family: montserrat;
+}
+*{
+    margin: 0;
+    padding:0;
+    list-style:none;
+    text-decoration: none;
+}
+nav{
+    height: 80px;
+    background: #2c3e50;
+    box-shadow: 4px 4px 40px -20px rgba(0, 0, 0, 1);
+}
+nav img{
+    position: absolute;
+    top: 17px;
+    left: 12%;
+}
+nav ul{
+    float: right;  
+    margin-right: 25px;
+}
+
+nav ul li{
+    display : inline-block;
+    line-height: 80px;
+    margin:0 15px;
+}
+nav ul li a{
+    position: relative;
+    color: white;
+    font-size: 18px;
+    padding: 5px 0;
+    text-transform: uppercase;
+}
+nav ul li a::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s linear;
+}
+nav ul li a:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+label #btn,
+label #cancel{
+    color: white;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+.logo img{
+    width: 90px;
+    height: 90px;
+    position: relative;
+    top: -10px;
+}
+.logo{
+    display: inline-block;
+    margin: 0;
+}
+.logo2{
+    display: inline-block;
+    color: #fff;
+    vertical-align: top;
+    padding-left: 20px;
+    line-height: 80px;
+}
+#map{
+    margin: 20px auto;
+    width: 80%;
+    height: 600px;
+    box-shadow: 4px 4px 40px -20px rgba(0, 0, 0, 1);
+
+}
+@media screen and (max-width : 860px){
+ 
+    label #btn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #34495E;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    #check:checked ~ label #btn{
+        display: none;
+    }
+    #check:checked ~ label #cancel{
+        display: block;
+    }
+    
+}
